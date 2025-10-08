@@ -11,12 +11,9 @@ class Program
         myProgram.Commands.Add(new MoveCommand(10));
         myProgram.Commands.Add(new TurnCommand("right"));
         myProgram.Commands.Add(new MoveCommand(10));
-        myProgram.Commands.Add(new TurnCommand("right"));
+        myProgram.Commands.Add(new TurnCommand("left"));
         myProgram.Commands.Add(new MoveCommand(10));
         myProgram.Commands.Add(new TurnCommand("right"));
-        myProgram.Commands.Add(new MoveCommand(10));
-        myProgram.Commands.Add(new TurnCommand("right"));
-        
         myProgram.executeProgram(Jan);
     }
     
