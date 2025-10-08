@@ -1,9 +1,7 @@
+using System.Collections.Generic;
 public interface ICommand
 {
-    void execute(Character character, List<string> outputLog)
-    {
-        
-    }
+    void Execute(Character character, List<string> outputLog);
 
 }
 

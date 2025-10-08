@@ -1,16 +1,16 @@
 public class Character
 {
-    private int x = 0; // Starts at (0,0)
-    private int y = 0;
+    public int X { get; private set; } = 0; // Starts at (0,0)
+    public int Y { get; private set; } = 0;
     public Direction Facing { get; private set; } = Direction.East;
 
     public void Move(int steps) {
         switch (Facing)
         {
-            case Direction.North: y += steps; break;
-            case Direction.East: x += steps; break;
-            case Direction.South: y -= steps; break;
-            case Direction.West: x -= steps; break;
+            case Direction.North: Y += steps; break;
+            case Direction.East: X += steps; break;
+            case Direction.South: Y -= steps; break;
+            case Direction.West: X -= steps; break;
         }
     }
 

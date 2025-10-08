@@ -1,0 +1,17 @@
+using System.Collections.Generic;
+
+public class RepeatCommand : ICommand
+{
+    private int steps;
+
+    public MoveCommand(int steps)
+    {
+        this.steps = steps;
+    }
+
+    public void Execute(Character character, List<string> outputLog)
+    {
+        character.Move(steps);
+        outputLog.Add($"Move {steps}");
+    }
+}
