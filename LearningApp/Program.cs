@@ -6,26 +6,29 @@ class Program
     static void Main()
     {
         Console.WriteLine("\n=== PROGRAM MENU ===");
-        Console.WriteLine("[1] Import porgram from file");
+        Console.WriteLine("[1] Import program from file");
         Console.WriteLine("[2] Choose from example objects"); // Gives 3 example options
         Console.Write("Enter choice: ");
 
         string input = Console.ReadLine();
 
-        ProgramCommands myProgram;
-        Character jan = new Charachter();
+        ProgramCommands myProgram = null;
+        Character jan = new Character();
 
         if (input == "1")
         {
-            Console.Write("Enter file path: ");
+            Console.Write("Enter file path (without quotes): ");
             string path = Console.ReadLine();
 
             if (!File.Exists(path)) // checkes if path exist maybe move to different place
             {
-                Console.WriteLine("File not found!");
+                Console.WriteLine("File not found! Make sure you did not include quotes.");
                 return;
             }
-            // code voor importeren
+            IProgramImporter importer = new TextProgramImporter();
+            myProgram = importer.Import(path);
+            Console.WriteLine("Program imported successfully!");
+
         }
         else if (input == "2")
         {
@@ -76,40 +79,5 @@ class Program
         {
             Console.WriteLine("Invalid choice. Please restart and enter 1 or 2!");
         }
-
-
-        /*Character Jan = new Character();
-
-        var myProgram = new ProgramCommands();
-
-        myProgram.Commands.Add(new MoveCommand(10));
-        myProgram.Commands.Add(new TurnCommand("right"));
-
-        myProgram.Commands.Add(new RepeatCommand(3, new List<ICommand>
-        {
-            new MoveCommand(5),
-            new TurnCommand("left")
-        }));
-
-        myProgram.Commands.Add(new MoveCommand(10));
-
-        myProgram.Commands.Add(new RepeatCommand(2, new List<ICommand>
-        {
-            new TurnCommand("right"),
-            new RepeatCommand(2, new List<ICommand>
-            {
-                new MoveCommand(2),
-                new TurnCommand("left")
-            })
-        }));
-        var calculator = new ProgramMetricsCalculator();
-        var metrics = calculator.Calculate(myProgram);
-
-        // Print the result
-        Console.WriteLine(metrics);
-
-        //myProgram.executeProgram(Jan);*/
     }
-
-
 }

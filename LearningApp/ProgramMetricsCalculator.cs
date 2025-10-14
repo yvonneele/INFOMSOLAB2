@@ -6,7 +6,7 @@ public class ProgramMetricsCalculator
     public ProgramMetrics Calculate(ProgramCommands program)
     {
         var metrics = new ProgramMetrics();
-        CalculateRecursive(program.Commands, metrics, 1);
+        CalculateRecursive(program.Commands, metrics, 0);
         return metrics;
     }
 

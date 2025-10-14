@@ -13,9 +13,9 @@ public class ProgramMetrics
     public override string ToString()
     {
         return
-            "Program Metrics:\n" +
+            "\nProgram Metrics:\n" +
             $"  Commands    : {NumberOfCommands, -4}\n" +
-            $"  Repeats     : {NumberOfCommands, -4}\n" +
+            $"  Repeats     : {NumberOfRepeats, -4}\n" +
             $"  Max Nesting : {MaxNesting, -4}";
     }
 }
