@@ -1,7 +1,7 @@
 public class ProgramCommands
 {
     public List<ICommand> Commands = new List<ICommand>(); // tijdelijk public
-    public void executeProgram(Character character)
+    public void ExecuteProgram(Character character)
     {
         List<string> log = new List<string>(); // misschien later buiten methode halen
 

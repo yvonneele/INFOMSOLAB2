@@ -12,7 +12,11 @@ public class ProgramMetrics
 
     public override string ToString()
     {
-        return $"Commands: {NumberOfCommands}, Repeats: {NumberOfRepeats}, Max nesting: {MaxNesting}";
+        return
+            "Program Metrics:\n" +
+            $"  Commands    : {NumberOfCommands, -4}\n" +
+            $"  Repeats     : {NumberOfCommands, -4}\n" +
+            $"  Max Nesting : {MaxNesting, -4}";
     }
 }
 
