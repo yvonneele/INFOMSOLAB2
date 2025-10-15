@@ -1,3 +1,5 @@
+using System;
+
 namespace LearningApp.Models
 {
     public enum Direction
