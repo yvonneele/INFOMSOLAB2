@@ -4,6 +4,7 @@ using LearningApp.Models;
 using LearningApp.Importers;
 using LearningApp.Commands;
 using LearningApp.Metrics;
+using LearningApp.Objects;
 
 namespace LearningApp
 {
@@ -34,7 +35,6 @@ namespace LearningApp
                 IProgramImporter importer = new TextProgramImporter();
                 myProgram = importer.Import(path);
                 Console.WriteLine("Program imported successfully!");
-
             }
             else if (input == "2")
             {
@@ -46,17 +46,16 @@ namespace LearningApp
 
                 string exampleChoice = Console.ReadLine();
 
-                if (exampleChoice == "1") ;
-                //myProgram = CreateBasicProgram();
-                else if (exampleChoice == "2") ;
-                //myProgram = CreateAdvancedProgram();
-                else if (exampleChoice == "3") ;
-                //myProgram = CreateExpertProgram();
+                if (exampleChoice == "1") 
+                    myProgram = ExamplePrograms.CreateBasicProgram();
+                else if (exampleChoice == "2") 
+                    myProgram = ExamplePrograms.CreateAdvancedProgram();
+                else if (exampleChoice == "3") 
+                    myProgram = ExamplePrograms.CreateExpertProgram();
                 else
                 {
                     Console.WriteLine("Invalid choice. Please restart and enter 1, 2, or 3!");
                 }
-
             }
             else
             {
