@@ -20,7 +20,7 @@ namespace LearningApp
             string input = Console.ReadLine();
 
             ProgramCommands myProgram = null;
-            Character jan = new Character();
+            Character character = new Character();
 
             if (input == "1")
             {
@@ -71,7 +71,7 @@ namespace LearningApp
 
             if (actionChoice == "1")
             {
-                myProgram.ExecuteProgram(jan);
+                myProgram.ExecuteProgram(character);
             }
             else if (actionChoice == "2")
             {
