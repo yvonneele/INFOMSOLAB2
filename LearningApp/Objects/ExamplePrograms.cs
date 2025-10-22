@@ -1,8 +1,9 @@
+using LearningApp.Commands;
+using LearningApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using LearningApp.Commands;
 
 namespace LearningApp.Objects
 {
@@ -77,5 +78,29 @@ namespace LearningApp.Objects
             // Metrics: NumberOfCommands: 16, NumberOfRepeats: 4, MaxNesting: 2
             // Endpoint: (1, 1) Facing North
         }
+
+        public static ProgramCommands CreateRepeatUntilProgram()
+        {
+            var program = new ProgramCommands();
+
+            // Herhaal totdat het eindpunt ('x') bereikt is:
+            program.Commands.Add(new RepeatUntilCommand(RepeatUntilCondition.WallAhead, new List<ICommand>
+            {
+                new MoveCommand(1),
+                new TurnCommand("right")
+
+            }));
+
+            //grid edge 
+            program.Commands.Add(new RepeatUntilCommand(RepeatUntilCondition.GridEdge,new List<ICommand>
+            {
+                new MoveCommand(1),
+                new TurnCommand("left")
+            }
+        ));
+
+            return program;
+        }
+
     }
 }

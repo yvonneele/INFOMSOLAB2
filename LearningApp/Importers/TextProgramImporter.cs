@@ -1,7 +1,8 @@
+using LearningApp.Commands;
+using LearningApp.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using LearningApp.Commands;
 
 namespace LearningApp.Importers
 {
@@ -50,6 +51,22 @@ namespace LearningApp.Importers
 
                     var innerCommands = ParseLines(lines, ref index, currentIndent + 4); // checks for spaces for indentation nested repeats.
                     commands.Add(new RepeatCommand(times, innerCommands));
+                }
+                else if (line.StartsWith("RepeatUntil")) 
+                {
+                    string conditionStr = line.Split(' ')[1]; // WallAhead of GridEdge
+                    RepeatUntilCondition condition;
+
+                    if (conditionStr == "WallAhead")
+                        condition = RepeatUntilCondition.WallAhead;
+                    else if (conditionStr == "GridEdge")
+                        condition = RepeatUntilCondition.GridEdge;
+                    else
+                        throw new Exception("Unknown RepeatUntil condition: " + conditionStr);
+
+                    index++;
+                    var innerCommands = ParseLines(lines, ref index, currentIndent + 4);
+                    commands.Add(new RepeatUntilCommand(condition, innerCommands));
                 }
                 else
                 {

@@ -54,6 +54,7 @@ namespace LearningApp
                 Console.WriteLine("[1] Basic program (just moves and turns)");
                 Console.WriteLine("[2] Advanced program (with repeats)");
                 Console.WriteLine("[3] Expert program (nested repeats)");
+                Console.WriteLine("[4] RepeatUntil program (moves until goal)");
                 Console.Write("Enter choice: ");
 
                 string exampleChoice = Console.ReadLine();
@@ -64,6 +65,8 @@ namespace LearningApp
                     myProgram = ExamplePrograms.CreateAdvancedProgram();
                 else if (exampleChoice == "3") 
                     myProgram = ExamplePrograms.CreateExpertProgram();
+                else if (exampleChoice == "4")
+                    myProgram = ExamplePrograms.CreateRepeatUntilProgram();
                 else
                 {
                     Console.WriteLine("Invalid choice. Please restart and enter 1, 2, or 3!");
