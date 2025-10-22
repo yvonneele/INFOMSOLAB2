@@ -12,6 +12,8 @@ namespace LearningApp
     {
         static void Main()
         {
+            // tijdelijk een testgrid 
+
             Console.WriteLine("\n=== PROGRAM MENU ===");
             Console.WriteLine("[1] Import program from file");
             Console.WriteLine("[2] Choose from example objects"); // Gives 3 example options
@@ -21,6 +23,16 @@ namespace LearningApp
 
             ProgramCommands myProgram = null;
             Character character = new Character();
+            // === TEMP GRID VOOR TESTEN ===
+            char[,] map = {
+            { 'o', 'o', '+', 'o' },
+            { 'o', '+', 'o', 'o' },
+            { 'o', 'o', 'x', 'o' }
+        };
+
+            Grid grid = new Grid(map);
+            character.SetGrid(grid);
+
 
             if (input == "1")
             {
