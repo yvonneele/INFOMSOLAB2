@@ -24,10 +24,10 @@ namespace LearningApp.Models
 
                 switch (Facing)
                 {
-                    case Direction.North: newY += steps; break;
-                    case Direction.East: newX += steps; break;
-                    case Direction.South: newY -= steps; break;
-                    case Direction.West: newX -= steps; break;
+                    case Direction.North: newY -= 1; break; // omhoog = Y-1
+                    case Direction.East: newX += 1; break;  // rechts = X+1
+                    case Direction.South: newY += 1; break; // omlaag = Y+1
+                    case Direction.West: newX -= 1; break;  // links = X-1
                 }
                 // controleren of de nieuwe positie geblokkeerd is of buiten het grid is 
                 if (Grid.IsBlocked(newX, newY) && Grid != null)

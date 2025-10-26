@@ -25,9 +25,10 @@ namespace LearningApp
             Character character = new Character();
             // === TEMP GRID VOOR TESTEN ===
             char[,] map = {
-            { 'o', 'o', '+', 'o' },
-            { 'o', '+', 'o', 'o' },
-            { 'o', 'o', 'x', 'o' }
+            { 'o', 'o', '+', '+', '+' },
+            { '+', 'o', 'o', '+', '+' },
+            { '+', '+', 'o', '+', '+' },
+            { '+', '+', 'o', 'o', '+' }
         };
 
             Grid grid = new Grid(map);
@@ -86,7 +87,14 @@ namespace LearningApp
 
             if (actionChoice == "1")
             {
+                Console.WriteLine("\nInitial grid state:");
+                grid.Draw(character);
+
+                Console.WriteLine("\nRunning program...");
                 myProgram.ExecuteProgram(character);
+
+                Console.WriteLine("\nFinal grid state:");
+                grid.Draw(character);
             }
             else if (actionChoice == "2")
             {

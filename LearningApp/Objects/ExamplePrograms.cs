@@ -12,13 +12,13 @@ namespace LearningApp.Objects
         public static ProgramCommands CreateBasicProgram() // Example program with basic moves and turns.
         {
             var program = new ProgramCommands();
-            program.Commands.Add(new MoveCommand(5));
+            program.Commands.Add(new MoveCommand(1));
             program.Commands.Add(new TurnCommand("right"));
-            program.Commands.Add(new MoveCommand(10));
+            program.Commands.Add(new MoveCommand(2));
             program.Commands.Add(new TurnCommand("left"));
-            program.Commands.Add(new MoveCommand(7));
+            program.Commands.Add(new MoveCommand(1));
             program.Commands.Add(new TurnCommand("right"));
-            program.Commands.Add(new MoveCommand(3));
+            program.Commands.Add(new MoveCommand(1));
             return program;
             // Metrics: NumberOfCommands: 7, NumberOfRepeats: 0, MaxNesting: 0
             // Endpoint: (12,-13) Facing South
